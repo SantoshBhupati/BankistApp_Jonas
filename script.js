@@ -93,8 +93,19 @@ console.log(arr.reverse());
 
 //CONACT 
 let arr2=[12,56,78,90];
-const something = arr.concat(arr2);
-console.log(something);
+ 
 
 //JION
-console.log(something.join('-'));
+// console.log(something.join('-'));
+
+// Array At Method
+console.log(arr.at(0));
+
+movements.forEach((mov,i,arr)=>{
+  if(mov >0 ){
+    console.log(`Movements ${i} : You Deposited ${mov}`);
+  }
+  else{
+    console.log(`Movements ${i} : You Withdrew ${Math.abs(mov)}`);
+  }
+});
