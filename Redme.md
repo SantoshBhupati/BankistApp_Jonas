@@ -87,3 +87,31 @@ movements.forEach((mov,i,arr)=>{
     console.log(`Movements ${i} : You Withdrew ${Math.abs(mov)}`);
   }
 });
+
+
+//DOM APPLICAION
+Element.insertAdjacentHTML()
+The insertAdjacentHTML() method of the Element interface parses the specified text as HTML or XML and inserts the resulting nodes into the DOM tree at a specified position. It does not reparse the element it is being used on, and thus it does not corrupt the existing elements inside that element. This avoids the extra step of serialization, making it much faster than direct innerHTML manipulation.
+
+Syntax
+element.insertAdjacentHTML(position, text);
+Copy to Clipboard
+Parameters
+position
+A DOMString representing the position relative to the element; must be one of the following strings:
+
+'beforebegin': Before the element itself.
+'afterbegin': Just inside the element, before its first child.
+'beforeend': Just inside the element, after its last child.
+'afterend': After the element itself.
+text
+The string to be parsed as HTML or XML and inserted into the tree.
+
+Visualization of position names
+<!-- beforebegin -->
+<p>
+  <!-- afterbegin -->
+  foo
+  <!-- beforeend -->
+</p>
+<!-- afterend -->
