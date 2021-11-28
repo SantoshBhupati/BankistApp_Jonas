@@ -129,6 +129,20 @@ const displayMovements = function(movements){
 
 }
 
+// COMPUTING USERNAME
+// const user = 'Steven Thomas Williams';
+// const userName = user.toLocaleLowerCase().split(' ').map(firstWord => firstWord[0]).join('');
+// console.log(userName);
+
+// createUsername(accounts);
+
+const createUsername = function(accs){
+  accs.forEach((acc)=>{
+    acc.username = acc.owner.toLocaleLowerCase().split(' ').map(firstWord => firstWord[0]).join('');
+  })
+}
+createUsername(accounts);
+console.log(accounts);
 // displayMovements(account1.movements);
 
 // const uroTOUsd = 1.1;
