@@ -129,4 +129,16 @@ const displayMovements = function(movements){
 
 }
 
-displayMovements(account1.movements);
+// displayMovements(account1.movements);
+
+// const uroTOUsd = 1.1;
+//  const movementUSD = movements.map((mov)=> mov*uroTOUsd);
+// //  console.log(movements);
+// //  console.log(movementUSD);
+
+// const movementDescription = movements.map((mov,i)=>
+//   `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+//     mov
+//   )}`
+// )
+// console.log(movementDescription);
