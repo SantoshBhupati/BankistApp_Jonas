@@ -128,6 +128,7 @@ const displayMovements = function(movements){
   })
 
 }
+displayMovements(movements)
 
 // COMPUTING USERNAME
 // const user = 'Steven Thomas Williams';
@@ -156,3 +157,20 @@ console.log(accounts);
 //   )}`
 // )
 // console.log(movementDescription);
+
+//  const deposits = movements.filter((mov)=> mov >0);
+//  console.log(deposits)
+
+// const balance = movements.reduce((acc,cur,i,arr)=>{
+//   console.log(`Itreation ${i}: ${acc} and Current_Value ${cur}`);
+//   return acc+cur;
+// },0);
+// console.log(balance)
+
+//CALCTOTAL BALANCE
+const caclDisplayBalance = function(movements){
+  const balance = movements.reduce((acc,mov) => acc + mov ,0);
+  labelBalance.textContent = `${balance} EUR`;
+}
+
+caclDisplayBalance(account1.movements);
