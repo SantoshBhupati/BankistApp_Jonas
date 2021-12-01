@@ -88,6 +88,66 @@ movements.forEach((mov,i,arr)=>{
   }
 });
 
+9)Array.prototype.map()
+The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+Parameters
+callbackFn
+Function that is called for every element of arr. Each time callbackFn executes, the returned value is added to newArray.
+
+The callbackFn function accepts the following arguments:
+
+element
+The current element being processed in the array.
+
+indexOptional
+The index of the current element being processed in the array.
+
+arrayOptional
+The array map was called upon.
+
+thisArgOptional
+Value to use as this when executing callbackFn.
+
+Return value
+A new array with each element being the result of the callback function.
+
+10)array.split() method
+
+The split() method splits a string into an array of substrings.
+
+The split() method returns the new array.
+
+The split() method does not change the original string.
+
+If (" ") is used as separator, the string is split between words.
+
+let text = "How are you doing today?";
+const myArray = text.split(" ");
+
+ result = ["how","are","you","doing" ,"today"]
+
+
+
+11)Array.prototype.filter()
+->
+The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter(word => word.length > 6);
+
+console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]
+
+
+12)Array.prototype.reduce()
+
+
+The reduce() method executes a user-supplied “reducer” callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.
+
+The first time that the callback is run there is no "return value of the previous calculation". If supplied, an initial value may be used in its place. Otherwise array element 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0).
+
 
 //DOM APPLICAION
 Element.insertAdjacentHTML()
