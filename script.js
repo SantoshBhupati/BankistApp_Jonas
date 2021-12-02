@@ -128,7 +128,7 @@ const displayMovements = function(movements){
   })
 
 }
-displayMovements(movements)
+// displayMovements(movements)
 
 // COMPUTING USERNAME
 // const user = 'Steven Thomas Williams';
@@ -144,6 +144,19 @@ const createUsername = function(accs){
 }
 createUsername(accounts);
 console.log(accounts);
+
+//CALACDISPLAYSUMMARY
+const calcDisplaySummary = function(acc){
+  const income = acc.movements.filter((mov)=>mov>0).reduce((acc,mov)=> acc+mov,0);
+  labelSumIn.textContent =`${income}€`;
+
+  const out = acc.movements.filter((mov)=> mov<0).reduce((acc,mov)=> acc+mov ,0);
+  labelSumOut.textContent=`${Math.abs(out)}€`
+
+  const intrest= movements.filter(mov => mov > 0).map(deposits => deposits*acc.interestRate/100).reduce((acc,int)=>acc+int,0);
+  labelSumInterest.textContent = `${intrest}€`; 
+}
+// calcDisplaySummary(account1.movements);
 // displayMovements(account1.movements);
 
 // const uroTOUsd = 1.1;
@@ -170,7 +183,63 @@ console.log(accounts);
 //CALCTOTAL BALANCE
 const caclDisplayBalance = function(movements){
   const balance = movements.reduce((acc,mov) => acc + mov ,0);
-  labelBalance.textContent = `${balance} EUR`;
+  labelBalance.textContent = `${balance} €`;
 }
 
-caclDisplayBalance(account1.movements);
+// caclDisplayBalance(account1.movements);
+
+//IMPLMEATION OF LOGIN
+let currentAccount;
+btnLogin.addEventListener('click',function(e){
+  e.preventDefault();
+  // console.log(inputLoginUsername.value);
+  currentAccount = accounts.find(acc => acc.username ===inputLoginUsername.value);
+  console.log(currentAccount);
+  if(currentAccount?.pin == Number(inputLoginPin.value)){
+    // console.log("LOGIN");
+
+    //CLEAR INPUT FIELDS
+    inputLoginUsername.value = inputLoginPin.value = '';
+    inputLoginPin.blur();
+
+    //DISPLAY UI MESSAGE
+    labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`;
+    containerApp.style.opacity = 100;
+
+    // DISPLAY MOVEMENTS
+    displayMovements(currentAccount.movements);
+
+    //DISPLAY BALANCE
+
+    caclDisplayBalance(currentAccount.movements);
+
+
+    //DISPLAY SUMMARY
+  calcDisplaySummary(currentAccount);
+  }
+})
+
+//Magic Chaning Methods
+
+// const uroTOUsd = 1.1;
+// const totalaBalanceUSD = movements.filter( mov => mov > 0).map(mov => mov*uroTOUsd).reduce((acc,mov)=> acc+mov ,0);
+// console.log(totalaBalanceUSD);
+
+
+//FIND METHOD
+console.log(accounts);
+const account = accounts.find(acc=>acc.owner ==='Steven Thomas Williams');
+console.log(account)
+
+
+
+
+
+
+ 
+
+
+
+
+
+
