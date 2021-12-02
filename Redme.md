@@ -148,6 +148,22 @@ The reduce() method executes a user-supplied “reducer” callback function on 
 
 The first time that the callback is run there is no "return value of the previous calculation". If supplied, an initial value may be used in its place. Otherwise array element 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0).
 
+Example
+ const balance = movements.reduce((acc,mov) => acc + mov ,0);
+
+
+ 13)Array.prototype.find()
+ ->
+The find() method returns the value of the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
+
+const array1 = [5, 12, 8, 130, 44];
+
+const found = array1.find(element => element > 10);
+
+console.log(found);
+output = 12
+
+
 
 //DOM APPLICAION
 Element.insertAdjacentHTML()
