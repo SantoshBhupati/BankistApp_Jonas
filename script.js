@@ -253,11 +253,25 @@ btnClose.addEventListener('click',function(e){
     //DELETE ACCOUNT
     accounts.splice(index,1);
     // console.log(accounts)
-    
+
     // UPDATE  UI
     labelWelcome.textContent = `Log in to get started`;
     containerApp.style.opacity = 0;
   }
+})
+
+
+// LOAN FUNCTIONN
+btnLoan.addEventListener('click', function(e){
+  e.preventDefault();
+  const amount = Number(inputLoanAmount.value);
+  if(amount > 0 && currentAccount.movements.some(mov => mov >= amount*0.1));
+  {
+    movements.push(amount);
+    //UPDATE UI
+    updateUI(currentAccount);
+  }
+  inputLoanAmount.value ='';
 })
 
 
