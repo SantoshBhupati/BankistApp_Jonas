@@ -164,6 +164,63 @@ console.log(found);
 output = 12
 
 
+14)Array.prototype.findIndex()
+->
+The findIndex() method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test.
+
+const array1 = [5, 12, 8, 130, 44];
+
+const isLargeNumber = (element) => element > 13;
+
+console.log(array1.findIndex(isLargeNumber));
+// expected output: 3
+
+
+15)Array.prototype.includes()
+->
+The includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate.
+
+const array1 = [1, 2, 3];
+
+console.log(array1.includes(2));
+// expected output: true
+
+16)Array.prototype.some()
+->
+The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array.
+
+const array = [1, 2, 3, 4, 5];
+
+// checks whether an element is even
+const even = (element) => element % 2 === 0;
+
+console.log(array.some(even));
+// expected output: true
+
+
+17)Array.prototype.every()
+->
+The every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+
+const array1 = [1, 30, 39, 29, 10, 13];
+
+console.log(array1.every(Ele => ele >0));
+// expected output: true
+
+//OPTIONAL CHAINING
+Optional chaining (?.)
+->
+The optional chaining operator (?.) enables you to read the value of a property located deep within a chain of connected objects without having to check that each reference in the chain is valid.
+
+The ?. operator is like the . chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined. When used with function calls, it returns undefined if the given function does not exist.
+
+This results in shorter and simpler expressions when accessing chained properties when the possibility exists that a reference may be missing. It can also be helpful while exploring the content of an object when there's no known guarantee as to which properties are required.
+
+Optional chaining cannot be used on a non-declared root object, but can be used with an undefined root object.
+
+
+HTMLElement.blur()
+The HTMLElement.blur() method removes keyboard focus from the current element.
 
 //DOM APPLICAION
 Element.insertAdjacentHTML()
@@ -191,3 +248,7 @@ Visualization of position names
   <!-- beforeend -->
 </p>
 <!-- afterend -->
+
+HTMLElement.blur()
+->
+The HTMLElement.blur() method removes keyboard focus from the current element.
