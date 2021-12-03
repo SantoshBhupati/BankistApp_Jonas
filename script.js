@@ -241,6 +241,26 @@ btnTransfer.addEventListener('click',function(e){
   }
 })
 
+
+// CLOSING ACCOUNT
+btnClose.addEventListener('click',function(e){
+  e.preventDefault();
+  if(currentAccount.username ===inputCloseUsername.value && currentAccount.pin === Number(inputClosePin.value)){
+    // console.log("hiiiiiiiiiiiiiiiiiiii");
+    const index = accounts.findIndex(acc => acc.username === currentAccount.username);
+    // console.log(index);
+
+    //DELETE ACCOUNT
+    accounts.splice(index,1);
+    // console.log(accounts)
+    
+    // UPDATE  UI
+    labelWelcome.textContent = `Log in to get started`;
+    containerApp.style.opacity = 0;
+  }
+})
+
+
 //Magic Chaning Methods
 
 // const uroTOUsd = 1.1;
