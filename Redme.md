@@ -207,6 +207,34 @@ const array1 = [1, 30, 39, 29, 10, 13];
 console.log(array1.every(Ele => ele >0));
 // expected output: true
 
+
+
+18)Array.prototype.sort()
+->
+The sort() method sorts the elements of an array in place and returns the sorted array. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
+
+The time and space complexity of the sort cannot be guaranteed as it depends on the implementation.
+
+
+19)Array.prototype.fill()
+The fill() method changes all elements in an array to a static value, from a start index (default 0) to an end index (default array.length). It returns the modified array.
+
+
+const array1 = [1, 2, 3, 4];
+
+// fill with 0 from position 2 until position 4
+console.log(array1.fill(0, 2, 4));
+// expected output: [1, 2, 0, 0]
+
+// fill with 5 from position 1
+console.log(array1.fill(5, 1));
+// expected output: [1, 5, 5, 5]
+
+console.log(array1.fill(6));
+// expected output: [6, 6, 6, 6]
+
+
+
 //OPTIONAL CHAINING
 Optional chaining (?.)
 ->
