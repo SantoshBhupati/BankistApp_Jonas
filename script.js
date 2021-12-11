@@ -298,9 +298,52 @@ console.log(accounts);
 const account = accounts.find(acc=>acc.owner ==='Steven Thomas Williams');
 console.log(account)
 
+//FORM METHOD
+const y = Array.from({length:7}, ()=> 1);
+console.log(y);
+
+const z = Array.from({length : 7},(_,i)=> i+1);
+console.log(z);
 
 
+labelBalance.addEventListener('click',function(){
+  const movementsUI = Array.from(document.querySelectorAll('.movements__value'));
+  console.log(movementsUI);
+})
 
+//ARRAY METHODS PRATICE
+
+//1
+const bankDeposits = accounts.map(acc => acc.movements).flat().filter(mov => mov > 0).reduce((acc,mov)=> acc+mov ,0);
+console.log(bankDeposits);
+
+
+//2
+
+const numberDeposits1000 = accounts.flatMap(acc => acc.movements).filter(mov => mov > 1000).length;
+console.log(numberDeposits1000)
+
+//3
+const nummberReduceDeposits = accounts.flatMap(acc => acc.movements).reduce((count , curr)=>curr >= 1000?count+1:count,0);
+console.log(nummberReduceDeposits);
+
+//4
+const sums = accounts.flatMap(acc => acc.movements).reduce((sums,cur) =>{
+ cur > 0 ? sums.deposits += cur : sums.withdrawl += cur;
+ return sums;
+},{deposits: 0, withdrawl : 0});
+
+console.log(sums);
+
+//5
+// this is a nice title = This Is a Nice Title  
+const convertTitlecase = function(title){
+const expection =['a','an','the','but','or','with'];
+
+const titleCase = title.toLowerCase().split(' ').map(word =>expection.includes(word)? word: word[0].toUpperCase() + word.slice(1)).join(' ');
+return titleCase;
+}
+console.log(convertTitlecase('this is a nice title'));
 
 
  
