@@ -234,6 +234,22 @@ console.log(array1.fill(6));
 // expected output: [6, 6, 6, 6]
 
 
+20)Array.from()
+->
+The Array.from() static method creates a new, shallow-copied Array instance from an array-like or iterable object.
+
+
+21)Array.prototype.flat()
+The flat() method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+
+const arr1 = [0, 1, 2, [3, 4]];
+
+console.log(arr1.flat());
+// expected output: [0, 1, 2, 3, 4]
+
+22)Array.prototype.flatMap()
+The flatMap() method returns a new array formed by applying a given callback function to each element of the array, and then flattening the result by one level. It is identical to a map() followed by a flat() of depth 1, but slightly more efficient than calling those two methods separately.
+
 
 //OPTIONAL CHAINING
 Optional chaining (?.)
